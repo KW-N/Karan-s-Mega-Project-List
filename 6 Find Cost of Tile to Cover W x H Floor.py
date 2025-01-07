@@ -3,9 +3,6 @@ Script based on the projekts found in https://github.com/karan/Projects
 Find Cost of Tile to Cover W x H Floor - 
 Calculate the total cost of tile it would take to cover a floor plan of width and height, using a cost entered by the user.
 """
-"""
-Calculate the total cost of tile it would take to cover a floor plan of width and height, using a cost entered by the user.
-"""
 import re
 
 def convert_to_cm(value_with_unit):
