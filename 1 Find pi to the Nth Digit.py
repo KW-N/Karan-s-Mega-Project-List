@@ -1,5 +1,5 @@
 """
-Script based on the projekts found in https://github.com/karan/Projects 
+Script based on the projects found in https://github.com/karan/Projects 
 This script finds the nth number of pi
 """
 import math
