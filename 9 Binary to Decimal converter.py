@@ -1,5 +1,5 @@
 """
-Script based on the projekts found in https://github.com/karan/Projects 
+Script based on the projects found in https://github.com/karan/Projects 
 Binary to Decimal and Back Converter - 
 Develop a converter to convert a decimal number to binary or a binary number to its decimal equivalent.
 """ 
@@ -22,9 +22,9 @@ def main():
     
     def convert_binary():
         """ 
-        Fist this functions validates the input in the binary box
-        Next the function converts the binary number to a decimal number
-        finaly it prints the number in the GUI using display_results  
+        First, this function validates the input in the binary box
+        Next, the function converts the binary number to a decimal number
+        Finally, it prints the number in the GUI using display_results  
         """
         binary = entry_binary.get()
 
@@ -44,9 +44,14 @@ def main():
 
     def convert_decimal():
         """ 
-        Fist this functions validates the input decimal value box
-        Next the function converts the decimal number to a binary number
-        finaly it prints the number in the GUI using display_results 
+        First, this function validates the input decimal value box
+        Next, the function converts the decimal number to a binary number
+        Finally, it prints the number in the GUI using display_results 
+        
+        The numbers after the decimal point are handled as binary fractions:
+        0.1   = 1/2 = 0.5
+        0.01  = 1/4 = 0.25
+        0.001 = 1/8 = 0.125
         """
         decimal = entry_decimal.get()
 
@@ -60,7 +65,7 @@ def main():
             messagebox.showerror("Error", f"The decimal number must be a number.")
             return
         
-        try:    # converts the float into 2 ints, one for befor the decimal point and one after converts to binary and combine
+        try:    
             value = float(decimal)
             integer_part = int(value)
             binary_integer = bin(integer_part).replace("0b", "")
@@ -80,8 +85,6 @@ def main():
 
         except Exception as e:
             messagebox.showerror("Error", f"An unexpected error occurred: {e}")
-        
-        """I am not compleatly satisfied with how it handles numbers after the decimal point"""
 
 #----- Below is the GUI with buttons and places to enter inputs
     lable_binary = tk.Label(root, text = 'Binary number')
