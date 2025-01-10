@@ -1,11 +1,11 @@
 """
-Script based on the projekts found in https://github.com/karan/Projects 
+Script based on the projects found in https://github.com/karan/Projects 
 This script finds the next prime number 
-The desciption of the task was:
-Have the program find prime numbers until the user chooses to stop asking for the next one.
+The description of the task was:
+Have the program find prime numbers until the user stops asking for the next one.
 """
 def is_prime(n):
-    """Test if the number n is a prime number"""
+    """ Test if the number n is a prime number """
     if n < 2:
         return False
     for i in range(2, int(n**0.5) + 1):  
