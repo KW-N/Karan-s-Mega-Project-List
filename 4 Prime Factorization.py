@@ -1,5 +1,5 @@
 """
-Script based on the projekts found in https://github.com/karan/Projects 
+Script based on the projects found in https://github.com/karan/Projects 
 This script finds all prime factors for a number 
 """
 
@@ -7,16 +7,16 @@ print("This script finds all prime factors for a number")
 
 while True:
     try:
-        number = int(input("Enter the number you whis to know the prime factors of:"))
+        number = int(input("Enter the number you wish to know the prime factors of:"))
         if number < 1:
-            print ("The definition use for prime numbers are posetive numbers larger than 1, please try agine")
+            print ("The definition used for prime numbers are positive numbers larger than 1, please try again")
             continue
         break
     except ValueError:
         print("Please enter a number")
 
 def is_prime(n):
-   """test if the number it self is a prime number"""
+   """ test if the number itself is a prime number """
    for i in range(2,n):
       if (n % i) == 0:
          return False
@@ -24,7 +24,7 @@ def is_prime(n):
          return True
 
 def prime_factors(n):
-    """Find all prime factors of a given number."""
+    """ Find all prime factors of a given number. """
     factors = []
     divisor = 2
     while n > 1:
