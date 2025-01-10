@@ -1,12 +1,12 @@
 """
-Script based on the projekts found in https://github.com/karan/Projects 
-This script generates the n'th number in the fibonarcci sequence
+Script based on the projects found in https://github.com/karan/Projects 
+This script generates the nth number in the Fibonacci sequence
 """
-print("This script generates the n\'th number in the fibonarcci sequence")
+print("This script generates the n\'th number in the Fibonacci sequence")
 
 while True:
     try:
-        nth_fib = int(input("Enter the number you want from the fibonacci sequence: "))
+        nth_fib = int(input("Enter the number you want from the Fibonacci sequence: "))
         if nth_fib < 0:
             print ("The number can\'t be negative try again")
             continue
