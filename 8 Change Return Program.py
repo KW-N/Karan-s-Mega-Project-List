@@ -1,8 +1,8 @@
 """
-Script based on the projekts found in https://github.com/karan/Projects 
+Script based on the projects found in https://github.com/karan/Projects 
 Change Return Program - 
 The user enters a cost and then the amount of money given. 
-The program will figure out the change and the number of quarters, dimes, nickels, pennies needed for the change.
+The program will figure out the change and the number of quarters, dimes, nickels, and pennies needed for the change.
 """
 import tkinter as tk
 from tkinter import messagebox, ttk 
@@ -22,7 +22,7 @@ def change_return_calculator():
 
     def is_float(value, query):
         """ 
-        Checks that inputtet values are floats larger than 0
+        Checks that inputted values are floats larger than 0
         """
         error_occurred = False 
         if not value:
@@ -42,14 +42,14 @@ def change_return_calculator():
     def calculate_change():
         """
         calculates the return change 
-        caluclates in cents so i can do calculations in ints as i had problmes using floats resulting in missing 1 cent 
+        calculates in cents so I can do calculations in ints as I had problems using floats resulting in missing 1 cent 
         """
-        list_of_curency = [10000, 5000, 2000, 1000, 500, 200, 100, 50, 25, 10, 5, 1]  
+        list_of_currency = [10000, 5000, 2000, 1000, 500, 200, 100, 50, 25, 10, 5, 1]  
         price = is_float(entry_price.get(), "Price")
         paid = is_float(entry_paied.get(), "Paied")
         
         if paid < price:
-            display_result("The customer has not paied enougth")
+            display_result("The customer has not paid enough")
             return (None)
         
         price = int(round(price * 100))
@@ -57,17 +57,17 @@ def change_return_calculator():
         change = paid - price
         change_distribution = {}
 
-        for curency in list_of_curency:
-            count = change // curency
+        for currency in list_of_currency:
+            count = change // currency
             if count > 0:
-                change_distribution[curency] = count
-                change -= count * curency
+                change_distribution[currency] = count
+                change -= count * currency
         
         if not change_distribution:
             display_result("No change is needed.")
         else:
             result_text = "Change to return:\n"
-            result_text += "\n".join([f"{count} x {curency / 100}" for curency, count in change_distribution.items()])
+            result_text += "\n".join([f"{count} x {currency / 100}" for currency, count in change_distribution.items()])
             display_result(result_text)   
 
     #----- Below is the GUI with buttons and places to enter inputs
