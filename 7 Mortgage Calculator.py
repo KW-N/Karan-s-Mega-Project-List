@@ -1,19 +1,17 @@
 """
-Script based on the projekts found in https://github.com/karan/Projects 
+Script based on the projects found in https://github.com/karan/Projects 
 Mortgage Calculator - 
 Calculate the monthly payments of a fixed term mortgage over given Nth terms at a given interest rate. 
-Also figure out how long it will take the user to pay back the loan. 
+Also, figure out how long it will take the user to pay back the loan. 
 For added complexity, add an option for users to select the compounding interval (Monthly, Weekly, Daily, Continually).
-I have decided to do this with a GUI using tkinter for the chalenge.
+I have decided to do this with a GUI using Tkinter for the challenge.
 """
 import tkinter as tk
 from tkinter import messagebox, ttk 
 
 
 def check_value_input(value, query):
-    """ 
-    Checks that values are inputted correctly and are difrent from 0
-    """
+    """ Checks that values are inputted correctly and are different from 0 """
     error_occurred = False 
     if not value:
         messagebox.showerror("Error", f"Please enter a value for {query}.")
@@ -35,7 +33,7 @@ def mortgage_calculator():
     root.geometry("600x400")
 
     def check_inputs(mortgage, intrest_rate, monthly_paymentn):
-        """Validates that the inputs are in the right format"""
+        """ Validates that the inputs are in the right format """
         mortgage_valid = check_value_input(mortgage, "Mortgage amount")
         intrest_rate_valid = check_value_input(intrest_rate, "Intrest rate")
         monthly_paymentn_valid = check_value_input(monthly_paymentn, "Monthly payment")
@@ -44,13 +42,13 @@ def mortgage_calculator():
         main(mortgage_valid, intrest_rate_valid, monthly_paymentn_valid)
 
     def calculate_mortgage():
-        """The function that runs when the calculate_mortgage button is pressed"""
+        """ The function that runs when the calculate_mortgage button is pressed """
         check_inputs(entry_mortgage.get(),
                      entry_intrest_rate.get(),
                      entry_monthly_payment.get())
 
     def display_result(text):
-        """Clear existing result and display new text."""
+        "" "Clear existing results and display new text """
         for widget in root.grid_slaves():
             if int(widget.grid_info()["row"]) == 7:
                 widget.destroy()
@@ -60,7 +58,7 @@ def mortgage_calculator():
     def main(mortgage_valid, intrest_rate_valid, monthly_paymentn_valid):
         compounding_interval = drop_down_compounding_interval.get()
         if compounding_interval == "Daily":
-            compounding_interval = 30.5         # Avrage dayes in a month
+            compounding_interval = 30.5         # Avrage days in a month
         elif compounding_interval == "Weekly":
             compounding_interval = 4.34         # Avrage weeks in a month
         elif compounding_interval == "Monthly":
