@@ -9,7 +9,7 @@ from tkinter import messagebox, ttk
 def main():
     """ The main body of the function """
     root = tk.Tk()
-    root.title('Change return calculator')
+    root.title('Binary to base10 converter')
     root.geometry("300x150")
 
     def display_result(text, position):
