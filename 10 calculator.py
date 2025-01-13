@@ -11,7 +11,7 @@ import math
 def main():
     """ Lunches the calculator """
     root = tk.Tk()
-    root.title('Change return calculator')
+    root.title('Calculator')
     root.geometry("200x300")
 
     def add_to_end(text):
